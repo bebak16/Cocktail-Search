@@ -1,1 +1,7 @@
+Const Delay_Minutes = 60
 
+DO
+CreateObject("Wscript.shell").SendKeys "{SCROLLOCK}"
+Wscript.Sleep Delay_Minutes * 60
+
+Loop
