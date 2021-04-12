@@ -36,9 +36,9 @@ const SingleCocktail = () => {
       <div style={{display:'flex', textAlign:'justify' }}>
      <img  src={strDrinkThumb} alt ={idDrink}
      style={{borderRadius:'8px', display:'grid', marginRight:'10px',
-      width:'30%', marginLeft:'20%'}} />
+      width:'30%', marginLeft:'20%', marginRight:'30px'}} />
 
-      <div>
+      <div style={{maxWidth: '30%', fontFamily:"cursive"}}>
       <p> <b>Ingredient 1 : </b> {strIngredient1}</p>
       <p> <b>Ingredient 2 : </b> {strIngredient2}</p>
       <p> <b>Ingredient 3 : </b> {strIngredient3}</p>
