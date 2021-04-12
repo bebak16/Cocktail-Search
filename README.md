@@ -1,11 +1,5 @@
-#### React Router Fix
+Search your favoirite cocktails by using the above code.
 
-(Fix)[https://dev.to/dance2die/page-not-found-on-netlify-with-react-router-58mc]
+Run on Localhost:3000 
 
-#### CRA Fix
 
-```
-
-"build": "CI= react-scripts build",
-
-```
