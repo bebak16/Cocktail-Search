@@ -4,20 +4,20 @@ import { useParams, Link } from 'react-router-dom'
 const url = 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i='
 
 const SingleCocktail = () => {
-  const {id} = useParams();
+  const { id } = useParams();
   console.log(id);
- const [data, setData] = React.useState([]);
+  const [data, setData] = React.useState([]);
 
   const cocktail = async () => {
-   const Response = await fetch(`${url}${id}`);
-   const cocktailData = await Response.json();
-   setData(cocktailData.drinks[0]);
+    const Response = await fetch(`${url}${id}`);
+    const cocktailData = await Response.json();
+    setData(cocktailData.drinks[0]);
   }
 
   React.useEffect(() => {
-   cocktail();
+    cocktail();
   }, [])
- 
+
   const {
     strDrinkThumb,
     strInstructions,
@@ -28,26 +28,30 @@ const SingleCocktail = () => {
     strIngredient2,
     strIngredient3,
     strIngredient4,
-   } = data;
+  } = data;
   return (
     <div>
-      <h1 style={{textAlign:'center', color:'green', marginTop:'30px'}}>Cocktail Details of {id}</h1>
-      
-      <div style={{display:'flex', textAlign:'justify' }}>
-     <img  src={strDrinkThumb} alt ={idDrink}
-     style={{borderRadius:'8px', display:'grid', marginRight:'10px',
-      width:'30%', marginLeft:'20%', marginRight:'30px'}} />
+      <h1 style={{ textAlign: 'center', color: 'green', marginTop: '30px' }}>Cocktail Details of {id}</h1>
 
-      <div style={{maxWidth: '30%', fontFamily:"cursive"}}>
-      <p> <b>Ingredient 1 : </b> {strIngredient1}</p>
-      <p> <b>Ingredient 2 : </b> {strIngredient2}</p>
-      <p> <b>Ingredient 3 : </b> {strIngredient3}</p>
-      <p> <b>Ingredient 4 : </b> {strIngredient4}</p>
-      <p> <b>Instructions: </b>{strInstructions}</p>
-      </div> 
+      <div style={{ display: 'flex', textAlign: 'justify' }}>
+        <img src={strDrinkThumb} alt={idDrink}
+          style={{
+            borderRadius: '8px', display: 'grid', marginRight: '10px',
+            width: '30%', marginLeft: '20%', marginRight: '30px'
+          }} />
+
+        <div style={{ maxWidth: '30%', fontFamily: "cursive" }}>
+          <p><b>Drink Category :</b>{strCategory}</p>
+          <p><b>Drink Type :</b> {strAlcoholic}</p>
+          <p> <b>Ingredient 1 : </b> {strIngredient1}</p>
+          <p> <b>Ingredient 2 : </b> {strIngredient2}</p>
+          <p> <b>Ingredient 3 : </b> {strIngredient3}</p>
+          <p> <b>Ingredient 4 : </b> {strIngredient4}</p>
+          <p> <b>Instructions: </b>{strInstructions}</p>
+        </div>
       </div>
     </div>
-    
+
   )
 }
 
