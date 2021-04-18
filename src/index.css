@@ -290,8 +290,13 @@ Form
 }
 .clear-btn{
   display: contents;
-  color: red;
+  color: darkred;
   font-size: 1rem;
+}
+.clear-btn:hover{
+  display: contents;
+  color: red;
+  font-size: 1.1rem;
 }
 
 .form-control label {
